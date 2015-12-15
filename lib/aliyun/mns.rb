@@ -28,17 +28,7 @@ module Aliyun
     class << self
       def configuration
         @configuration ||=  begin
-          if defined? Rails
-            config_file = Rails.root.join("config/aliyun-mns.yml")
-          else
-            config_file = File.expand_path("~/.aliyun-mns.yml")
-          end
-
-          if (File.exist?(config_file))
-            config = YAML.load(ERB.new(File.new(config_file).read).result)
-            config = config[Rails.env] if defined? Rails
-          end
-          OpenStruct.new(config || {access_id:"", key:"", region:"", owner_id:""})
+          OpenStruct.new({access_id:ENV['OSS_ACCESS_ID'], key:ENV['OSS_ACCESS_KEY'], host:ENV['MNS_HOST']})
         end
       end
 

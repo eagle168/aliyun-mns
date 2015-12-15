@@ -59,19 +59,17 @@ module Aliyun::mns
     def batch_peek_message number_of_messages=16
       result = Request.get(messages_path, params: {peekonly: true, numOfMessages: number_of_messages})
       messages = Hash.xml_array(result, "Messages")
-      messages.map{|message| 
-        Messages.new(self, message.to_xml)
+      messages.map{|message|
+        Messages.new(self, message)
       }
     end
-
-
 
     def queue_path
       "/#{name}"
     end
 
     def messages_path
-      "/#{name}/messages"
+      "/queues/#{name}/messages"
     end
 
   end

@@ -14,7 +14,7 @@ module Aliyun::mns
 
   class Request
     attr_reader :uri, :method, :date, :body, :content_md5, :content_type, :content_length, :mns_headers
-    delegate :access_id, :key, :owner_id, :region, to: :configuration
+    delegate :access_id, :key, :host, to: :configuration
 
     class << self
       [:get, :delete, :put, :post].each do |m|
@@ -31,13 +31,13 @@ module Aliyun::mns
 
     def initialize method: "get", path: "/", mns_headers: {}, params: {}
       conf = {
-        host: "#{owner_id}.mns-#{region}.aliyuncs.com",
+        host: host,
         path: path
       }
       conf.merge!(query: params.to_query) unless params.empty?
       @uri = URI::HTTP.build(conf)
       @method = method
-      @mns_headers = mns_headers.merge("x-mns-version" => "2014-07-08")
+      @mns_headers = mns_headers.merge("x-mns-version" => "2015-06-06")
     end
 
     def content type, values={}
