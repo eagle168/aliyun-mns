@@ -1,4 +1,4 @@
-module Aliyun::mns
+module Aliyun::Mns
   class Queue
     attr_reader :name
 

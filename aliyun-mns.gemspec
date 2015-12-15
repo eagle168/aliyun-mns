@@ -1,30 +1,54 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'aliyun/mns/version'
+# -*- encoding: utf-8 -*-
+# stub: aliyun-mns 0.1.1 ruby lib
 
-Gem::Specification.new do |spec|
-  spec.name          = 'aliyun-mns'
-  spec.version       = Aliyun::Mns::VERSION
-  spec.authors       = ["mgampkay","skinnyworm"]
-  spec.email         = ["mgampkay@gmail.com", "askinnyworm@gmail.com"]
-  spec.summary       = 'Ruby SDK for Aliyun MNS (non-official)'
-  spec.description   = 'Non-official SDK for Aliyun MNS'
-  spec.homepage      = 'https://github.com/mgampkay/aliyun-mns'
-  spec.license       = 'MIT'
+Gem::Specification.new do |s|
+  s.name = "aliyun-mns"
+  s.version = "0.1.1"
 
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib"]
+  s.authors = ["mgampkay", "skinnyworm"]
+  s.date = "2015-12-15"
+  s.description = "Non-official SDK for Aliyun MNS"
+  s.email = ["mgampkay@gmail.com", "askinnyworm@gmail.com"]
+  s.executables = ["mqs"]
+  s.files = [".gitignore", ".travis.yml", "Gemfile", "LICENSE.txt", "README.md", "Rakefile", "aliyun-mns.gemspec", "bin/mqs", "lib/aliyun/mns.rb", "lib/aliyun/mns/batch_message.rb", "lib/aliyun/mns/cli.rb", "lib/aliyun/mns/message.rb", "lib/aliyun/mns/queue.rb", "lib/aliyun/mns/request.rb", "lib/aliyun/mns/version.rb", "spec/lib/aliyun/mns/message_spec.rb", "spec/lib/aliyun/mns/queue_spec.rb", "spec/lib/aliyun/mns/request_spec.rb", "spec/spec_helper.rb", "tags"]
+  s.homepage = "https://github.com/mgampkay/aliyun-mns"
+  s.licenses = ["MIT"]
+  s.rubygems_version = "2.4.5"
+  s.summary = "Ruby SDK for Aliyun MNS (non-official)"
+  s.test_files = ["spec/lib/aliyun/mns/message_spec.rb", "spec/lib/aliyun/mns/queue_spec.rb", "spec/lib/aliyun/mns/request_spec.rb", "spec/spec_helper.rb"]
 
-  spec.add_dependency 'nokogiri', '>= 1.6'
-  spec.add_dependency 'activesupport', '>= 4.1'
-  spec.add_dependency "rest-client"
-  spec.add_dependency "thor"
+  if s.respond_to? :specification_version then
+    s.specification_version = 4
 
-  spec.add_development_dependency "bundler"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "pry"
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<nokogiri>, [">= 1.6"])
+      s.add_runtime_dependency(%q<activesupport>, [">= 4.1"])
+      s.add_runtime_dependency(%q<rest-client>, [">= 0"])
+      s.add_runtime_dependency(%q<thor>, [">= 0"])
+      s.add_development_dependency(%q<bundler>, [">= 0"])
+      s.add_development_dependency(%q<rake>, ["~> 10.0"])
+      s.add_development_dependency(%q<rspec>, [">= 0"])
+      s.add_development_dependency(%q<pry>, [">= 0"])
+    else
+      s.add_dependency(%q<nokogiri>, [">= 1.6"])
+      s.add_dependency(%q<activesupport>, [">= 4.1"])
+      s.add_dependency(%q<rest-client>, [">= 0"])
+      s.add_dependency(%q<thor>, [">= 0"])
+      s.add_dependency(%q<bundler>, [">= 0"])
+      s.add_dependency(%q<rake>, ["~> 10.0"])
+      s.add_dependency(%q<rspec>, [">= 0"])
+      s.add_dependency(%q<pry>, [">= 0"])
+    end
+  else
+    s.add_dependency(%q<nokogiri>, [">= 1.6"])
+    s.add_dependency(%q<activesupport>, [">= 4.1"])
+    s.add_dependency(%q<rest-client>, [">= 0"])
+    s.add_dependency(%q<thor>, [">= 0"])
+    s.add_dependency(%q<bundler>, [">= 0"])
+    s.add_dependency(%q<rake>, ["~> 10.0"])
+    s.add_dependency(%q<rspec>, [">= 0"])
+    s.add_dependency(%q<pry>, [">= 0"])
+  end
 end

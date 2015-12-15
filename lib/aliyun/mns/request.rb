@@ -1,5 +1,5 @@
 require 'base64'
-module Aliyun::mns
+module Aliyun::Mns
 
   class RequestException < Exception
     attr_reader :content
