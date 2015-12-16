@@ -1,5 +1,5 @@
 require 'base64'
-module Aliyun::mns
+module Aliyun::Mns
 
   class RequestException < Exception
     attr_reader :content
@@ -22,7 +22,7 @@ module Aliyun::mns
           options = {method: m, path: args[0], mns_headers: {}, params: {}}
           options.merge!(args[1]) if args[1].is_a?(Hash)
 
-          request = Aliyun::mns::Request.new(options)
+          request = Aliyun::Mns::Request.new(options)
           block.call(request) if block
           request.execute
         end
@@ -65,23 +65,23 @@ module Aliyun::mns
       }.merge(mns_headers).reject{|k,v| v.nil?}
       begin
         RestClient.send *[method, uri.to_s, body, headers].compact
-      rescue RestClient::Exception => ex
-        raise RequestException.new(ex)
+      #rescue RestClient::Exception => ex
+        #raise RequestException.new(ex)
       end
     end
 
     private
     def configuration
-      Aliyun::mns.configuration
+      Aliyun::Mns.configuration
     end
 
     def authorization date
       canonical_resource = [uri.path, uri.query].compact.join("?")
-      canonical_mq_headers = mns_headers.sort.collect{|k,v| "#{k.downcase}:#{v}"}.join("\n")
+      canonical_mn_headers = mns_headers.sort.collect{|k,v| "#{k.downcase}:#{v}"}.join("\n")
       method = self.method.to_s.upcase
-      signature = [method, content_md5 || "" , content_type || "" , date, canonical_mq_headers, canonical_resource].join("\n")
+      signature = [method, content_md5 || "" , content_type || "" , date, canonical_mn_headers, canonical_resource].join("\n")
       sha1 = Digest::HMAC.digest(signature, key, Digest::SHA1)
-      "mns #{access_id}:#{Base64.encode64(sha1).chop}"
+      "MNS #{access_id}:#{Base64.encode64(sha1).chop}"
     end
 
   end

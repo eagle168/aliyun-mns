@@ -22,6 +22,7 @@ module Aliyun
   module Mns
     require 'aliyun/mns/queue'
     require 'aliyun/mns/message'
+    require 'aliyun/mns/batch_message'
     require 'aliyun/mns/request'
     require 'aliyun/mns/cli'
 

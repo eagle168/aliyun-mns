@@ -1,4 +1,4 @@
-module Aliyun::mns
+module Aliyun::Mns
   class Queue
     attr_reader :name
 
@@ -51,21 +51,38 @@ module Aliyun::mns
       Message.new(self, result)
     end
 
+    def batch_receive_message number_of_messages
+      begin
+        result = Request.get(messages_path, params: { numOfMessages: number_of_messages})
+        messages = Hash.xml_array(result, "Messages", "Message")
+
+        messages.map{|message|
+          BatchMessage.new(self, message)
+        }
+      rescue RestClient::ResourceNotFound
+        nil
+      end
+
+    end
+
+
+
     def peek_message
       result = Request.get(messages_path, params: {peekonly: true})
       Message.new(self, result)
     end
 
-    def batch_peek_message number_of_messages=16
+    def batch_peek_message number_of_messages: 16
       result = Request.get(messages_path, params: {peekonly: true, numOfMessages: number_of_messages})
-      messages = Hash.xml_array(result, "Messages")
+      messages = Hash.xml_array(result, "Messages", "Message")
+
       messages.map{|message|
-        Messages.new(self, message)
+        BatchMessage.new(self, message)
       }
     end
 
     def queue_path
-      "/#{name}"
+      "/queues/#{name}"
     end
 
     def messages_path

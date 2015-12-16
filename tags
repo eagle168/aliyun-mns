@@ -4,50 +4,54 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Aliyun	lib/aliyun/mqs.rb	/^module Aliyun$/;"	m
-Aliyun	lib/aliyun/mqs/cli.rb	/^module Aliyun::Mqs$/;"	m
-Aliyun	lib/aliyun/mqs/message.rb	/^module Aliyun::Mqs$/;"	m
-Aliyun	lib/aliyun/mqs/queue.rb	/^module Aliyun::Mqs$/;"	m
-Aliyun	lib/aliyun/mqs/request.rb	/^module Aliyun::Mqs$/;"	m
-Aliyun	lib/aliyun/mqs/version.rb	/^module Aliyun$/;"	m
-Cli	lib/aliyun/mqs/cli.rb	/^  class Cli < Thor$/;"	c	class:Aliyun
-Hash	lib/aliyun/mqs.rb	/^class Hash$/;"	c
-Message	lib/aliyun/mqs/message.rb	/^  class Message$/;"	c	class:Aliyun
-Mqs	lib/aliyun/mqs.rb	/^  module Mqs$/;"	m	class:Aliyun
-Mqs	lib/aliyun/mqs/version.rb	/^  module Mqs$/;"	m	class:Aliyun
-Queue	lib/aliyun/mqs/queue.rb	/^  class Queue$/;"	c	class:Aliyun
-Request	lib/aliyun/mqs/request.rb	/^  class Request$/;"	c	class:Aliyun
-RequestException	lib/aliyun/mqs/request.rb	/^  class RequestException < Exception$/;"	c	class:Aliyun
-[]	lib/aliyun/mqs/queue.rb	/^      def [] name$/;"	f	class:Aliyun.Queue
-authorization	lib/aliyun/mqs/request.rb	/^    def authorization date$/;"	f	class:Aliyun
-batch_peek_message	lib/aliyun/mqs/queue.rb	/^    def batch_peek_message number_of_messages=16$/;"	f	class:Aliyun
-change_visibility	lib/aliyun/mqs/message.rb	/^    def change_visibility seconds$/;"	f	class:Aliyun.Message
-check_receipt_handle	lib/aliyun/mqs/message.rb	/^    def check_receipt_handle$/;"	f	class:Aliyun.Message
-configuration	lib/aliyun/mqs.rb	/^      def configuration$/;"	f	class:Aliyun.Mqs
-configuration	lib/aliyun/mqs/request.rb	/^    def configuration$/;"	f	class:Aliyun
-configure	lib/aliyun/mqs.rb	/^      def configure$/;"	f	class:Aliyun.Mqs
-consume	lib/aliyun/mqs/cli.rb	/^    def consume(name)$/;"	f	class:Aliyun.Cli
-content	lib/aliyun/mqs/request.rb	/^    def content type, values={}$/;"	f	class:Aliyun
-create	lib/aliyun/mqs/cli.rb	/^    def create(name)$/;"	f	class:Aliyun.Cli
-create	lib/aliyun/mqs/queue.rb	/^    def create opts={}$/;"	f	class:Aliyun
-delete	lib/aliyun/mqs/cli.rb	/^    def delete(name)$/;"	f	class:Aliyun.Cli
-delete	lib/aliyun/mqs/message.rb	/^    def delete$/;"	f	class:Aliyun.Message
-delete	lib/aliyun/mqs/queue.rb	/^    def delete$/;"	f	class:Aliyun
-execute	lib/aliyun/mqs/cli.rb	/^    def execute info=nil$/;"	f	class:Aliyun
-execute	lib/aliyun/mqs/request.rb	/^    def execute$/;"	f	class:Aliyun
-initialize	lib/aliyun/mqs/message.rb	/^    def initialize queue, content$/;"	f	class:Aliyun.Message
-initialize	lib/aliyun/mqs/queue.rb	/^    def initialize name$/;"	f	class:Aliyun
-initialize	lib/aliyun/mqs/request.rb	/^    def initialize ex$/;"	f	class:Aliyun.RequestException
-initialize	lib/aliyun/mqs/request.rb	/^    def initialize method: "get", path: "\/", mqs_headers: {}, params: {}$/;"	f	class:Aliyun
-messages_path	lib/aliyun/mqs/queue.rb	/^    def messages_path$/;"	f	class:Aliyun
-peek	lib/aliyun/mqs/cli.rb	/^    def peek(name)$/;"	f	class:Aliyun
-peek_message	lib/aliyun/mqs/queue.rb	/^    def peek_message$/;"	f	class:Aliyun
-queue_path	lib/aliyun/mqs/queue.rb	/^    def queue_path$/;"	f	class:Aliyun
-queues	lib/aliyun/mqs/cli.rb	/^    def queues()$/;"	f	class:Aliyun.Cli
-queues	lib/aliyun/mqs/queue.rb	/^      def queues opts={}$/;"	f	class:Aliyun.Queue
-receive_message	lib/aliyun/mqs/queue.rb	/^    def receive_message wait_seconds: nil$/;"	f	class:Aliyun
-send	lib/aliyun/mqs/cli.rb	/^    def send(name, content)$/;"	f	class:Aliyun
-send_message	lib/aliyun/mqs/queue.rb	/^    def send_message message, opts={}$/;"	f	class:Aliyun
-to_s	lib/aliyun/mqs/message.rb	/^    def to_s$/;"	f	class:Aliyun.Message
-xml_array	lib/aliyun/mqs.rb	/^  def self.xml_array content, *path$/;"	F	class:Hash
-xml_object	lib/aliyun/mqs.rb	/^  def self.xml_object content, *path$/;"	F	class:Hash
+Aliyun	lib/aliyun/mns.rb	/^module Aliyun$/;"	m
+Aliyun	lib/aliyun/mns/batch_message.rb	/^module Aliyun::Mns$/;"	m
+Aliyun	lib/aliyun/mns/cli.rb	/^module Aliyun::Mns$/;"	m
+Aliyun	lib/aliyun/mns/message.rb	/^module Aliyun::Mns$/;"	m
+Aliyun	lib/aliyun/mns/queue.rb	/^module Aliyun::Mns$/;"	m
+Aliyun	lib/aliyun/mns/request.rb	/^module Aliyun::Mns$/;"	m
+Aliyun	lib/aliyun/mns/version.rb	/^module Aliyun$/;"	m
+BatchMessage	lib/aliyun/mns/batch_message.rb	/^  class BatchMessage < Message$/;"	c	class:Aliyun
+Cli	lib/aliyun/mns/cli.rb	/^  class Cli < Thor$/;"	c	class:Aliyun
+Hash	lib/aliyun/mns.rb	/^class Hash$/;"	c
+Message	lib/aliyun/mns/message.rb	/^  class Message$/;"	c	class:Aliyun
+Mns	lib/aliyun/mns.rb	/^  module Mns$/;"	m	class:Aliyun
+Mns	lib/aliyun/mns/version.rb	/^  module Mns$/;"	m	class:Aliyun
+Queue	lib/aliyun/mns/queue.rb	/^  class Queue$/;"	c	class:Aliyun
+Request	lib/aliyun/mns/request.rb	/^  class Request$/;"	c	class:Aliyun
+RequestException	lib/aliyun/mns/request.rb	/^  class RequestException < Exception$/;"	c	class:Aliyun
+[]	lib/aliyun/mns/queue.rb	/^      def [] name$/;"	f	class:Aliyun.Queue
+authorization	lib/aliyun/mns/request.rb	/^    def authorization date$/;"	f	class:Aliyun
+batch_peek_message	lib/aliyun/mns/queue.rb	/^    def batch_peek_message number_of_messages: 16$/;"	f	class:Aliyun
+batch_receive_message	lib/aliyun/mns/queue.rb	/^    def batch_receive_message number_of_messages: 16, wait_seconds: nil$/;"	f	class:Aliyun
+change_visibility	lib/aliyun/mns/message.rb	/^    def change_visibility seconds$/;"	f	class:Aliyun.Message
+check_receipt_handle	lib/aliyun/mns/message.rb	/^    def check_receipt_handle$/;"	f	class:Aliyun.Message
+configuration	lib/aliyun/mns.rb	/^      def configuration$/;"	f	class:Aliyun.Mns
+configuration	lib/aliyun/mns/request.rb	/^    def configuration$/;"	f	class:Aliyun
+configure	lib/aliyun/mns.rb	/^      def configure$/;"	f	class:Aliyun.Mns
+consume	lib/aliyun/mns/cli.rb	/^    def consume(name)$/;"	f	class:Aliyun.Cli
+content	lib/aliyun/mns/request.rb	/^    def content type, values={}$/;"	f	class:Aliyun
+create	lib/aliyun/mns/cli.rb	/^    def create(name)$/;"	f	class:Aliyun.Cli
+create	lib/aliyun/mns/queue.rb	/^    def create opts={}$/;"	f	class:Aliyun
+delete	lib/aliyun/mns/cli.rb	/^    def delete(name)$/;"	f	class:Aliyun.Cli
+delete	lib/aliyun/mns/message.rb	/^    def delete$/;"	f	class:Aliyun.Message
+delete	lib/aliyun/mns/queue.rb	/^    def delete$/;"	f	class:Aliyun
+execute	lib/aliyun/mns/cli.rb	/^    def execute info=nil$/;"	f	class:Aliyun
+execute	lib/aliyun/mns/request.rb	/^    def execute$/;"	f	class:Aliyun
+initialize	lib/aliyun/mns/batch_message.rb	/^    def initialize queue, hash_message$/;"	f	class:Aliyun.BatchMessage
+initialize	lib/aliyun/mns/message.rb	/^    def initialize queue, content$/;"	f	class:Aliyun.Message
+initialize	lib/aliyun/mns/queue.rb	/^    def initialize name$/;"	f	class:Aliyun
+initialize	lib/aliyun/mns/request.rb	/^    def initialize ex$/;"	f	class:Aliyun.RequestException
+initialize	lib/aliyun/mns/request.rb	/^    def initialize method: "get", path: "\/", mns_headers: {}, params: {}$/;"	f	class:Aliyun
+messages_path	lib/aliyun/mns/queue.rb	/^    def messages_path$/;"	f	class:Aliyun
+peek	lib/aliyun/mns/cli.rb	/^    def peek(name)$/;"	f	class:Aliyun
+peek_message	lib/aliyun/mns/queue.rb	/^    def peek_message$/;"	f	class:Aliyun
+queue_path	lib/aliyun/mns/queue.rb	/^    def queue_path$/;"	f	class:Aliyun
+queues	lib/aliyun/mns/cli.rb	/^    def queues()$/;"	f	class:Aliyun.Cli
+queues	lib/aliyun/mns/queue.rb	/^      def queues opts={}$/;"	f	class:Aliyun.Queue
+receive_message	lib/aliyun/mns/queue.rb	/^    def receive_message wait_seconds: nil$/;"	f	class:Aliyun
+send	lib/aliyun/mns/cli.rb	/^    def send(name, content)$/;"	f	class:Aliyun
+send_message	lib/aliyun/mns/queue.rb	/^    def send_message message, opts={}$/;"	f	class:Aliyun
+to_s	lib/aliyun/mns/message.rb	/^    def to_s$/;"	f	class:Aliyun.Message
+xml_array	lib/aliyun/mns.rb	/^  def self.xml_array content, *path$/;"	F	class:Hash
+xml_object	lib/aliyun/mns.rb	/^  def self.xml_object content, *path$/;"	F	class:Hash
