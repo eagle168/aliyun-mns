@@ -23,7 +23,7 @@ RequestException	lib/aliyun/mns/request.rb	/^  class RequestException < Exceptio
 []	lib/aliyun/mns/queue.rb	/^      def [] name$/;"	f	class:Aliyun.Queue
 authorization	lib/aliyun/mns/request.rb	/^    def authorization date$/;"	f	class:Aliyun
 batch_peek_message	lib/aliyun/mns/queue.rb	/^    def batch_peek_message number_of_messages: 16$/;"	f	class:Aliyun
-batch_receive_message	lib/aliyun/mns/queue.rb	/^    def batch_receive_message number_of_messages: 16, wait_seconds: nil$/;"	f	class:Aliyun
+batch_receive_message	lib/aliyun/mns/queue.rb	/^    def batch_receive_message number_of_messages$/;"	f	class:Aliyun
 change_visibility	lib/aliyun/mns/message.rb	/^    def change_visibility seconds$/;"	f	class:Aliyun.Message
 check_receipt_handle	lib/aliyun/mns/message.rb	/^    def check_receipt_handle$/;"	f	class:Aliyun.Message
 configuration	lib/aliyun/mns.rb	/^      def configuration$/;"	f	class:Aliyun.Mns
