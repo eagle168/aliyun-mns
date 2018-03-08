@@ -80,7 +80,8 @@ module Aliyun::Mns
       canonical_mn_headers = mns_headers.sort.collect{|k,v| "#{k.downcase}:#{v}"}.join("\n")
       method = self.method.to_s.upcase
       signature = [method, content_md5 || "" , content_type || "" , date, canonical_mn_headers, canonical_resource].join("\n")
-      sha1 = Digest::HMAC.digest(signature, key, Digest::SHA1)
+      #sha1 = Digest::HMAC.digest(signature, key, Digest::SHA1)
+      sha1 = OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'), key, signature)
       "MNS #{access_id}:#{Base64.encode64(sha1).chop}"
     end
 
